@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        
+        <link rel="stylesheet" type="text/css" href="css/mainCSS.css" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+
+        <title>Welcome to City of Vaughan</title>
+    </head>
+    <body id="bodyApp">
+        <h1 class="divJustHidden">City of Vaughan App</h2>
+
+        <header id="headerMain">
+          <section id="sectionHeaderLogo">
+            <a href="index.html">
+              <img src="img/logo.png" alt="Vaughan">
+            </a>
+
+            <div id="divHomeButton" class="divJustHidden">
+              <a href="index.html" class="aBackButton aGreenButton">Home</a>
+            </div>
+          </section>
+          <section id="sectionCurrentSectionHeader"></section>
+        </header>
+        
+        <!-- Start of Home section -->
+
+        <section data-role="page" id="sectionHome" class="divJustHidden sectionBody">
+          <div class="divBasicMessage" id="divMessageHome"></div>
+
+          <a href="javascript:void(0);" onclick="getArticles(window.localStorage.getItem('strDomainName') + 'ASP/getArticle.aspx', 'divMessageNews', getDocID('divNewsContent'), 1);" title="News">
+            <img src="img/News.png" alt="News">
+          </a>
+          <br>
+          <a href="javascript:void(0);" onclick="getArticles(window.localStorage.getItem('strDomainName') + 'ASP/getArticle.aspx', 'divMessageEvent', getDocID('divEventContent'), 2);" title="Events">
+            <img src="img/Events.png" alt="Events">
+          </a> 
+          <br>
+          <a href="javascript:void(0);" onclick="changeSection('SocialMedia', 0);" title="Social Media">
+            <img src="img/SocialMedia.png" alt="Social Media">
+          </a>
+          <br>
+          <a href="javascript:void(0);" onclick="changeSection('ContactUs', 0);" title="Contact Us">
+            <img src="img/ContactUs.png" alt="Contact Us">
+          </a>
+          <br>
+        </section>
+
+        <!-- End of Home section -->
+
+        <!-- Start of Events section -->
+
+        <section data-role="page" id="sectionEvents" class="divJustHidden sectionBody">
+          <h2 class="divJustHidden">Events</h2>
+
+          <div class="divBasicMessage" id="divMessageEvent"></div>
+
+          <div id="divEventContent"></div>
+        </section>
+
+        <!-- End of Events section -->
+
+        <!-- Start of News section -->
+
+        <section data-role="page" id="sectionNews" class="divJustHidden sectionBody">
+          <h2 class="divJustHidden">News</h2>
+
+          <div class="divBasicMessage" id="divMessageNews"></div>
+
+          <div id="divNewsContent"></div>
+        </section>
+
+        <!-- End of News section -->
+
+        <!-- Start of Article Details section -->
+
+        <section data-role="page" id="sectionArticleDetails" class="divJustHidden sectionBody">
+          <h2 class="divJustHidden">Article Details</h2>
+
+          <div class="divBasicMessage" id="divMessageArticleDetails"></div>
+
+          <div class="divNewsFeedEntryDetailsHeader">
+              <a href="javascript:void(0);" class="aBackButton aGreenButton" onclick="javascript:changeSection(window.localStorage.getItem('strCurrentArticleType'), window.localStorage.getItem('intCurrentArticleType'));">Back</a>
+          </div>
+
+          <div class="divNewsFeedEntryTitle">
+              <label id="lblArticleTitle"></label>
+          </div>
+          <div class="divNewsFeedEntryDate">
+            <div class="customContainer" id="divArticleDetailsDateContainer">
+                <div class="customLeft" id="divArticleDetailsDateLeft">
+                  <time id="timeArticleDate"></time>
+                </div>
+                <div class="customRight" id="divArticleDetailsDateRight">
+                  <a href="javascript:void(0);" class="divJustHidden" id="aAddToCal">Add To Calendar</a>
+                </div>
+                <div class="customFooter" id="divArticleDetailsDateFooter"></div>
+            </div>
+          </div>
+          <div class="divNewsFeedEntryImage">
+              <img id="imgArticleImage">
+          </div>
+          <div class="divNewsFeedEntryContent" id="divArticleBody"></div>
+        </section>
+
+        <!-- End of Article Details section -->
+
+        <!-- Start of Social Media section -->
+
+        <section data-role="page" id="sectionSocialMedia" class="divJustHidden sectionBody">
+            <div class="customContainer divSocialMediaIconsContainer">
+                <div class="customLeft divSocialMediaIconsLeft">
+                  <a href="javascript:void(0);" onClick="javascript:viewWebpage('https://www.facebook.com/thecityofvaughan');">
+                    <img alt="Facebook" src="img/ShareFacebook.jpg">
+                  </a>
+                </div>
+                <div class="customMiddle divSocialMediaIconsMiddle">
+                  <a href="javascript:void(0);" onClick="javascript:viewWebpage('https://www.twitter.com/city_of_vaughan');">
+                    <img alt="Twitter" src="img/ShareTwitter.jpg">
+                  </a>
+                </div>
+                <div class="customMiddle divSocialMediaIconsMiddle">
+                  <a href="javascript:void(0);" onClick="javascript:viewWebpage('https://www.youtube.com/thecityofvaughan');">
+                    <img alt="YouTube" src="img/ShareYouTube.jpg">
+                  </a>
+                </div>
+                <div class="customRight divSocialMediaIconsRight">
+                  <a href="javascript:void(0);" onClick="javascript:viewWebpage('http://www.vaughancityblog.ca');">
+                    <img alt="Blog" src="img/ShareBlog.jpg">
+                  </a>
+                </div>
+                <div class="customFooter divSocialMediaIconsFooter"></div>
+            </div>
+
+
+            <div class="customContainer divSocialMediaVideoContainer">
+                <div class="customLeft divSocialMediaVideoLeft">
+                  <iframe width="300" height="215" src="https://www.youtube.com/embed/3JkrWh6SuT0?list=UUY8rXl6bnMlSZXQ3DsnJttw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="customRight divSocialMediaVideoRight">
+                  <label>2010-2013 Momentum Report</label>
+                </div>
+                <div class="customFooter divSocialMediaVideoFooter"></div>
+            </div>
+
+            <div class="customContainer divSocialMediaVideoContainer">
+                <div class="customLeft divSocialMediaVideoLeft">
+                  <iframe width="300" height="215" src="https://www.youtube.com/embed/m3uO9eU8SwI?list=UUY8rXl6bnMlSZXQ3DsnJttw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="customRight divSocialMediaVideoRight">
+                  <label>Vaughan Metropolitan Centre - It'll Move You</label>
+                </div>
+                <div class="customFooter divSocialMediaVideoFooter"></div>
+            </div>
+
+            <div class="customContainer divSocialMediaVideoContainer">
+                <div class="customLeft divSocialMediaVideoLeft">
+                  <iframe width="300" height="215" src="https://www.youtube.com/embed/XpLLrhY7FmI?list=UUY8rXl6bnMlSZXQ3DsnJttw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="customRight divSocialMediaVideoRight">
+                  <label>Vaughan Healthcare Centre Precinct Groundbreaking Ceremony</label>
+                </div>
+                <div class="customFooter divSocialMediaVideoFooter"></div>
+            </div>
+
+            <div class="customContainer divSocialMediaVideoContainer">
+                <div class="customLeft divSocialMediaVideoLeft">
+                  <iframe width="300" height="215" src="https://www.youtube.com/embed/ZNOGBMjdfhY?list=UUY8rXl6bnMlSZXQ3DsnJttw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="customRight divSocialMediaVideoRight">
+                  <label>2014 Budget - How your tax dollars are spent</label>
+                </div>
+                <div class="customFooter divSocialMediaVideoFooter"></div>
+            </div>
+
+            <div class="customContainer divSocialMediaVideoContainer">
+                <div class="customLeft divSocialMediaVideoLeft">
+                  <iframe width="300" height="215" src="https://www.youtube.com/embed/Cj4ebSFGeC8?list=UUY8rXl6bnMlSZXQ3DsnJttw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="customRight divSocialMediaVideoRight">
+                  <label>City of Vaughan Archives</label>
+                </div>
+                <div class="customFooter divSocialMediaVideoFooter"></div>
+            </div>
+
+            <div class="customContainer divSocialMediaVideoContainer">
+                <div class="customLeft divSocialMediaVideoLeft">
+                  <iframe width="300" height="215" src="https://www.youtube.com/embed/xKpl1nXcbQ0?list=UUY8rXl6bnMlSZXQ3DsnJttw" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="customRight divSocialMediaVideoRight">
+                  <label>Vaughan Celebrates! Corporate Events 2013</label>
+                </div>
+                <div class="customFooter divSocialMediaVideoFooter"></div>
+            </div>
+        </section>
+
+        <!-- End of Social Media section -->
+
+        <section data-role="page" id="sectionContactUs" class="divJustHidden sectionBody">
+            <div class="divSectionText">
+                There are many ways to contact the City of Vaughan.
+                <br><br>
+                Call Access Vaughan – our contact centre<br>
+                Phone: <a href="tel:"></a><br>
+                TTY: <a href="tel:"></a><br>
+                Email: <a href="javascript:void(0);" onclick="viewEmail('');"></a>
+                <br><br>
+                Visit City Hall<br>
+                <a  href="javascript:void(0);" onClick="javascript:viewWebpage('http://maps.apple.com/?q=2141%20Major%20Mackenzie%20Dr.Vaughan%20L6A%201T1');">2141 Major Mackenzie Dr.<br>
+                Vaughan L6A 1T1</a>
+                <br><br>
+                Connect with us online<br>
+                Twitter: <a href="javascript:void(0);" onClick="javascript:viewWebpage('http://twitter.com/city_of_vaughan')">twitter.com/city_of_vaughan</a><br>
+                Facebook: <a href="javascript:void(0);" onClick="javascript:viewWebpage('http://www.facebook.com/thecityofvaughan')">www.facebook.com/thecityofvaughan</a><br>
+                YouTube: <a href="javascript:void(0);" onClick="javascript:viewWebpage('http://www.youtube.com/thecityofvaughan')">www.youtube.com/thecityofvaughan</a><br>
+                Blog: <a href="javascript:void(0);" onClick="javascript:viewWebpage('http://vaughancityblog.ca')">vaughancityblog.ca</a>
+                <br><br>
+                This app is operated by the City of Vaughan’s Corporate Communications department. We can be reached at <a href="javascript:void(0);" onClick="javascript:viewEmail('corpcomm@vaughan.ca');">corpcomm@vaughan.ca</a> or <a href="tel:905-832-2281">905-832-2281</a>.
+            </div>
+        </section>
+
+        <!-- End of Contact Us section -->
+
+        <!-- Start of 404 section -->
+
+        <section data-role="page" id="section404" class="divJustHidden sectionBody sectionBackgroundImage">
+            <div class="divSectionText">
+                <h2>Offline</h2>
+
+                <div id="div404ErrorMessage">
+                    <label>Currently offline, connected to either Wifi or Cell connection</label>
+                </div>
+                <div id="div404Button">
+                    <a href="index.html" class="aOrangeLink">Re-Try Connection</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- End of 404 section -->
+
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/PhonegapJqueryStart.js"></script>
+        <script src="js/featuredcontentglider.js"></script>
+
+        <script src="js/MainJS.js"></script>
+        <script src="js/Ajax.js"></script>
+
+        <script>
+            console.log("On Page Load");
+            
+            // starts both the Phonegap and JQuery Frameworks
+            app.initialize(function() {
+              changeSection('Home', 0);
+            });
+
+            console.log("Device is Ready");
+        </script>
+    </body>
+</html>

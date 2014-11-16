@@ -1,0 +1,376 @@
+/*
+
+    Basic Styles
+
+*/
+
+body {
+    margin: 0;
+    font-size: 32px;
+    height: 100%;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+h1 {
+    margin: 20px 0 25px;
+}
+
+h2 {
+    margin: 0 20px 0 0;
+}
+
+a, img {
+    text-decoration: none;
+}
+
+a {
+    color: #294187;
+}
+
+.divJustHidden {
+    display: none;
+}
+
+.divBasicMessage {
+    padding: 14px;
+    line-height: 29px;
+    text-align: center;
+    color: #FF0000;
+    display: none;
+}
+
+.divBackButton {
+    padding: 25px 23px 0;
+    width: 100%;
+    text-align: left;
+}
+
+a.aBackButton {
+}
+
+.aGreenButton {
+    font-size: 27px;
+    font-weight: bold;
+    padding: 6px;
+    color: #FFF;
+    background-color: #7dcf2f;
+}
+
+.sectionBody {
+    padding: 66px 23px; 
+}
+
+#divHomeButton {
+    padding: 5px 0;
+    text-align: right;
+    width: 95%;
+}
+
+
+/*
+    
+    Tableless Forms
+
+*/
+
+.customContainer {
+}
+
+.customHeader {
+} 
+
+.customFooter {
+    clear: both;
+} 
+
+.customLeft {
+    float: left;
+} 
+
+.customMiddle {
+    float: left;
+} 
+
+.customRight {
+    float: left;
+}
+
+/*
+    
+    Tableless Forms - Social Media - Icons
+
+*/
+
+.divSocialMediaIconsContainer {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.divSocialMediaIconsFooter {
+}
+
+.divSocialMediaIconsLeft {
+    width: 25%;
+}
+
+.divSocialMediaIconsMiddle {
+    width: 25%;
+}
+
+.divSocialMediaIconsRight {
+    width: 25%;
+}
+
+/*
+    
+    Tableless Forms - Social Media - Videos
+
+*/
+
+.divSocialMediaVideoContainer {
+    padding: 0 23px 2pc;
+}
+
+.divSocialMediaVideoFooter {
+}
+
+.divSocialMediaVideoLeft {
+    margin-right: 25px;
+}
+
+.divSocialMediaVideoRight {
+    width: 45%;
+}
+
+/*
+    
+    Tableless Forms - Article Details - Dates
+
+*/
+
+#divArticleDetailsDateContainer {
+    margin-top: 15px;
+}
+
+#divArticleDetailsDateFooter {
+}
+
+#divArticleDetailsDateLeft {
+    width: 50%;
+}
+
+#divArticleDetailsDateRight {
+    width: 50%;
+    text-align: right;
+}
+
+/*
+
+    Header
+
+*/
+
+#sectionHeaderLogo {
+    background-color: #FFF;
+    text-align: center;
+    width: 100%;
+    padding: 52px 0 0 0;
+}
+
+#sectionHeaderLogo:after {
+    content: "\a0";
+    display: block;
+    margin: 6px 0 4px;
+}
+
+#sectionCurrentSectionHeader {
+    text-align: center;
+}
+
+#sectionCurrentSectionHeader:after {
+    content: "\a0";
+    display: block;
+    margin-bottom: 4px;
+    height: 0;
+}
+
+#sectionCurrentSectionHeader.divHomeHeaderBanner {
+    background-image: url('../img/StripedBackground.png');
+}
+
+#sectionHeaderLogo.divHomeHeaderBanner:after {
+    border-bottom: 4px solid #8cc63f;
+}
+
+#sectionCurrentSectionHeader.divHomeHeaderBanner {
+    border-top: 8px solid #8cc63f;
+    border-bottom: 4px solid #8cc63f;
+}
+
+#sectionCurrentSectionHeader.divHomeHeaderBanner:after {
+    border-bottom: 8px solid #8cc63f;
+    margin-bottom: 4px;
+}
+
+#sectionHeaderLogo.divOtherSecitonBanner:after {
+    border-bottom: 4px solid #005395;
+}
+
+#sectionCurrentSectionHeader.divOtherSecitonBanner img {
+    border-top: 8px solid #005395;
+    border-bottom: 4px solid #005395;
+}
+
+#sectionCurrentSectionHeader.divOtherSecitonBanner:after {
+    border-bottom: 8px solid #005395;
+    margin-bottom: 4px;
+}
+
+.divOtherSecitonBanner {
+
+}
+
+/*
+
+    Banner
+    
+*/
+
+.glidecontentwrapper {
+    position: relative; /* Do not change this value */
+    height: 290px; /* Set height to be able to contain height of largest content shown*/
+    overflow: hidden;
+}
+
+/*
+    Total wrapper width: 350px+5px+5px=360px
+    Or width of wrapper div itself plus any left and right CSS border and padding
+    Adjust related containers below according to comments
+*/
+
+.glidecontent { /*style for each glide content DIV within wrapper.*/
+    position: absolute; /* Do not change this value */
+    background: white;
+    visibility: hidden;
+    width: 640px;
+    background-image: url('../img/StripedBackground.png');
+}
+
+/*
+ Total glidecontent width: 330px+10px+10px=350px
+    Or width of wrapper div itself (not counting wrapper border/padding)
+*/
+
+.glidecontenttoggler { /*style for DIV used to contain toggler links. */
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    z-index: 999;
+    margin: 15px 0 0 30%;
+}
+
+/*
+ Total contenttoggler width: 350px+5px+5px=360px
+    Or total width of wrapper div (counting wrapper border/padding)
+*/
+
+.glidecontenttoggler div.toc { /*style for every navigational link within toggler */
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #FFF;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+.glidecontenttoggler div.selected, .glidecontenttoggler div.toc:hover { /*style for selected page's toggler link. ".selected" class auto generated! */
+    background-color: #246F84;
+}
+
+/*
+
+    Home
+
+*/
+
+#sectionHome, #section404 {
+    text-align: center;
+    background-image: url('../img/StripedBackground.png');
+}
+
+#sectionHome img {
+    padding-bottom: 43px;
+}
+
+/*
+
+    News & Events
+
+*/
+
+#sectionNews, #sectionEvents, #sectionArticleDetails {
+    padding-top: 40px;
+}
+
+.divNewsFeedEntry, #sectionEntryDetails {
+    margin: 0 5% 65px;
+}
+
+.divNewsFeedEntryTitle {
+    font-weight: bold;
+}
+
+.divNewsFeedEntryDate {
+    margin: 0 0 8px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 30px;
+    color: #7dcf2f;
+}
+
+.divNewsFeedEntryImage {
+    margin: 35px 0;
+}
+
+.divNewsFeedEntryImage img {
+    width: 100%;
+}
+
+.divNewsFeedEntryContent {
+
+}
+
+.divNewsFeedEntryDetailsHeader {
+    margin: 0 0 35px;
+}
+
+.divReadMore {
+    margin-top: 15px;
+}
+
+/*
+
+    Counillor
+
+ */
+
+.sectionCoucillorDetails {
+    padding: 0 5px 0 10px;
+}
+
+/*
+
+    Social Media
+
+*/
+
+#sectionSocialMedia {
+    padding: 40px 0;
+}
+
+.divSocialMediaIconsContainer img {
+    width: 40px;
+    height: 43px
+}
